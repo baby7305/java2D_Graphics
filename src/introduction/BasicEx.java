@@ -1,31 +1,42 @@
 package introduction;
 
-import javax.swing.*;
-import java.awt.*;
+import javafx.application.Application;
+import javafx.geometry.Pos;
+import javafx.scene.Scene;
+import javafx.scene.canvas.Canvas;
+import javafx.scene.canvas.GraphicsContext;
+import javafx.scene.layout.StackPane;
+import javafx.scene.text.Font;
+import javafx.stage.Stage;
 
 /**
  * Created by Administrator on 2018/1/18.
  */
-public class BasicEx extends JFrame {
+public class BasicEx extends Application {
+	Stage window;
+	GraphicsContext graphicsContext;
 
-	public BasicEx() {
-		initUI();
+	@Override
+	public void start(Stage primaryStage) throws Exception {
+		window = primaryStage;
+		window.setTitle("introduction");
+
+		Canvas canvas = new Canvas(400, 400);
+		graphicsContext = canvas.getGraphicsContext2D();
+		graphicsContext.setFont(new Font(20));
+		graphicsContext.fillText("java 2D", 200, 200);
+
+		StackPane rootNode = new StackPane();
+		rootNode.setAlignment(Pos.CENTER);
+		rootNode.getChildren().add(canvas);
+
+		Scene scene = new Scene(rootNode, 450, 450);
+		primaryStage.setScene(scene);
+		primaryStage.show();
 	}
 
-	private void initUI() {
-
-		add(new Surface());
-
-		setTitle("Simple Java 2D example");
-		setSize(300, 200);
-		setLocationRelativeTo(null);
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-	}
 
 	public static void main(String[] args) {
-		EventQueue.invokeLater(() -> {
-			BasicEx ex = new BasicEx();
-			ex.setVisible(true);
-		});
+		launch(args);
 	}
 }
