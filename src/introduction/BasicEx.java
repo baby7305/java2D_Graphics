@@ -9,7 +9,6 @@ import java.awt.*;
 public class BasicEx extends JFrame {
 
 	public BasicEx() {
-
 		initUI();
 	}
 
@@ -24,14 +23,9 @@ public class BasicEx extends JFrame {
 	}
 
 	public static void main(String[] args) {
-
-		EventQueue.invokeLater(new Runnable() {
-
-			@Override
-			public void run() {
-				BasicEx ex = new BasicEx();
-				ex.setVisible(true);
-			}
+		EventQueue.invokeLater(() -> {
+			BasicEx ex = new BasicEx();
+			ex.setVisible(true);
 		});
 	}
 }
