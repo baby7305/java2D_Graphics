@@ -25,13 +25,9 @@ public class BasicStrokesEx extends JFrame {
 
 	public static void main(String[] args) {
 
-		EventQueue.invokeLater(new Runnable() {
-			@Override
-			public void run() {
-
-				BasicStrokesEx ex = new BasicStrokesEx();
-				ex.setVisible(true);
-			}
+		EventQueue.invokeLater(() -> {
+			BasicStrokesEx ex = new BasicStrokesEx();
+			ex.setVisible(true);
 		});
 	}
 }

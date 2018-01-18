@@ -25,13 +25,9 @@ public class CapsEx extends JFrame {
 
 	public static void main(String[] args) {
 
-		EventQueue.invokeLater(new Runnable() {
-			@Override
-			public void run() {
-
-				CapsEx ex = new CapsEx();
-				ex.setVisible(true);
-			}
+		EventQueue.invokeLater(() -> {
+			CapsEx ex = new CapsEx();
+			ex.setVisible(true);
 		});
 	}
 }

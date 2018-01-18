@@ -36,13 +36,9 @@ public class PointsEx extends JFrame {
 
 	public static void main(String[] args) {
 
-		EventQueue.invokeLater(new Runnable() {
-			@Override
-			public void run() {
-
-				PointsEx ex = new PointsEx();
-				ex.setVisible(true);
-			}
+		EventQueue.invokeLater(() -> {
+			PointsEx ex = new PointsEx();
+			ex.setVisible(true);
 		});
 	}
 }

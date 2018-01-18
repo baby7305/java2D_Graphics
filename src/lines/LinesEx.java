@@ -25,13 +25,9 @@ public class LinesEx extends JFrame {
 
 	public static void main(String[] args) {
 
-		EventQueue.invokeLater(new Runnable() {
-			@Override
-			public void run() {
-
-				LinesEx ex = new LinesEx();
-				ex.setVisible(true);
-			}
+		EventQueue.invokeLater(() -> {
+			LinesEx ex = new LinesEx();
+			ex.setVisible(true);
 		});
 	}
 }

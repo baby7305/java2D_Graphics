@@ -25,13 +25,9 @@ public class JoinsEx extends JFrame {
 
 	public static void main(String[] args) {
 
-		EventQueue.invokeLater(new Runnable() {
-			@Override
-			public void run() {
-
-				JoinsEx ex = new JoinsEx();
-				ex.setVisible(true);
-			}
+		EventQueue.invokeLater(() -> {
+			JoinsEx ex = new JoinsEx();
+			ex.setVisible(true);
 		});
 	}
 }
